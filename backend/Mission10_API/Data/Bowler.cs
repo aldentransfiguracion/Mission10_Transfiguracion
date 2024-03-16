@@ -5,25 +5,25 @@ namespace Mission10_API.Data;
 
 public partial class Bowler
 {
-    public int BowlerId { get; set; }
+    public int bowlerId { get; set; }
 
-    public string? BowlerLastName { get; set; }
+    public string? bowlerLastName { get; set; }
 
-    public string? BowlerFirstName { get; set; }
+    public string? bowlerFirstName { get; set; }
 
-    public string? BowlerMiddleInit { get; set; }
+    public string? bowlerMiddleInit { get; set; }
 
-    public string? BowlerAddress { get; set; }
+    public string? bowlerAddress { get; set; }
 
-    public string? BowlerCity { get; set; }
+    public string? bowlerCity { get; set; }
 
-    public string? BowlerState { get; set; }
+    public string? bowlerState { get; set; }
 
-    public string? BowlerZip { get; set; }
+    public string? bowlerZip { get; set; }
 
-    public string? BowlerPhoneNumber { get; set; }
+    public string? bowlerPhoneNumber { get; set; }
 
-    public int? TeamId { get; set; }
+    public int? teamId { get; set; }
 
     public virtual ICollection<BowlerScore> BowlerScores { get; set; } = new List<BowlerScore>();
 

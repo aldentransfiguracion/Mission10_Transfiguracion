@@ -15,21 +15,21 @@ namespace Mission10_API.Data
         {
         var blah = from bowlers in _context.Bowlers
                 join teams in _context.Teams
-                on bowlers.TeamId equals teams.TeamId
-                where teams.TeamName == "Marlins" || teams.TeamName == "Sharks"
+                on bowlers.teamId equals teams.teamId
+                where teams.teamName == "Marlins" || teams.teamName == "Sharks"
                 select new
                 {
-                TeamId = bowlers.TeamId,
-                BowlerId = bowlers.BowlerId,
-                BowlerFirstName = bowlers.BowlerFirstName,
-                BowlerMiddleInit = bowlers.BowlerMiddleInit,
-                BowlerLastName = bowlers.BowlerLastName,
-                TeamName = teams.TeamName,
-                BowlerAddress = bowlers.BowlerAddress,
-                BowlerCity = bowlers.BowlerCity,
-                BowlerState = bowlers.BowlerState,
-                BowlerZip = bowlers.BowlerZip,
-                BowlerPhoneNumber = bowlers.BowlerPhoneNumber
+                TeamId = bowlers.teamId,
+                BowlerId = bowlers.bowlerId,
+                BowlerFirstName = bowlers.bowlerFirstName,
+                BowlerMiddleInit = bowlers.bowlerMiddleInit,
+                BowlerLastName = bowlers.bowlerLastName,
+                TeamName = teams.teamName,
+                BowlerAddress = bowlers.bowlerAddress,
+                BowlerCity = bowlers.bowlerCity,
+                BowlerState = bowlers.bowlerState,
+                BowlerZip = bowlers.bowlerZip,
+                BowlerPhoneNumber = bowlers.bowlerPhoneNumber
                 };
         return blah;
         }

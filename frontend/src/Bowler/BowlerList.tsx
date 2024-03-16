@@ -1,12 +1,12 @@
 import { Bowler } from '../types/Bowler';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function BowlerList() {
   const [bowlerData, setBowlerData] = useState<Bowler[]>([]);
 
   useEffect(() => {
     const fetchBowlerData = async () => {
-      const rsp = await fetch('http://localhost:5207');
+      const rsp = await fetch('http://localhost:5207/bowling');
       const f = await rsp.json();
       setBowlerData(f);
     };
@@ -16,7 +16,9 @@ function BowlerList() {
   return (
     <>
       <div className="row">
-        <h4>This Shows bowlers</h4>
+        <br />
+        <h4>This Shows Bowler Information</h4>
+        <br />
       </div>
       <table className="table table-bordered">
         <thead>
@@ -34,16 +36,16 @@ function BowlerList() {
         </thead>
         <tbody>
           {bowlerData.map((f) => (
-            <tr key={f.BowlerId}>
-              <td>{f.BowlerFirstName}</td>
-              <td>{f.BowlerMiddleInit}</td>
-              <td>{f.BowlerLastName}</td>
-              <td>{f.TeamId}</td>
-              <td>{f.BowlerAddress}</td>
-              <td>{f.BowlerCity}</td>
-              <td>{f.BowlerState}</td>
-              <td>{f.BowlerZip}</td>
-              <td>{f.BowlerPhoneNumber}</td>
+            <tr key={f.bowlerId}>
+              <td>{f.bowlerFirstName}</td>
+              <td>{f.bowlerMiddleInit}</td>
+              <td>{f.bowlerLastName}</td>
+              <td>{f.teamName}</td>
+              <td>{f.bowlerAddress}</td>
+              <td>{f.bowlerCity}</td>
+              <td>{f.bowlerState}</td>
+              <td>{f.bowlerZip}</td>
+              <td>{f.bowlerPhoneNumber}</td>
             </tr>
           ))}
         </tbody>
@@ -53,10 +55,3 @@ function BowlerList() {
 }
 
 export default BowlerList;
-function useEffect(arg0: () => void) {
-  throw new Error('Function not implemented.');
-}
-
-function fetchBowlerData() {
-  throw new Error('Function not implemented.');
-}

@@ -5,11 +5,11 @@ namespace Mission10_API.Data;
 
 public partial class Team
 {
-    public int TeamId { get; set; }
+    public int teamId { get; set; }
 
-    public string TeamName { get; set; } = null!;
+    public string teamName { get; set; } = null!;
 
-    public int? CaptainId { get; set; }
+    public int? captainId { get; set; }
 
     public virtual ICollection<Bowler> Bowlers { get; set; } = new List<Bowler>();
 
