@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic; 
 
 namespace Mission10_API.Data
 {
@@ -12,11 +11,27 @@ namespace Mission10_API.Data
             _context = temp;
         }
 
-        public IEnumerable<Bowler> GetBowlersWithTeams()
+        public IEnumerable<object> GetBowlersWithTeams()
         {
-            return _context.Bowlers
-                .Include(a => a.Team)
-                .ToList();
+        var blah = from bowlers in _context.Bowlers
+                join teams in _context.Teams
+                on bowlers.TeamId equals teams.TeamId
+                where teams.TeamName == "Marlins" || teams.TeamName == "Sharks"
+                select new
+                {
+                TeamId = bowlers.TeamId,
+                BowlerId = bowlers.BowlerId,
+                BowlerFirstName = bowlers.BowlerFirstName,
+                BowlerMiddleInit = bowlers.BowlerMiddleInit,
+                BowlerLastName = bowlers.BowlerLastName,
+                TeamName = teams.TeamName,
+                BowlerAddress = bowlers.BowlerAddress,
+                BowlerCity = bowlers.BowlerCity,
+                BowlerState = bowlers.BowlerState,
+                BowlerZip = bowlers.BowlerZip,
+                BowlerPhoneNumber = bowlers.BowlerPhoneNumber
+                };
+        return blah;
         }
     }
 }

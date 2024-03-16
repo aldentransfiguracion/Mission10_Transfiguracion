@@ -16,11 +16,15 @@ namespace Mission10_API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Bowler> Get()
+        public IEnumerable<object> Get()
         {
-            var BowlerData = _bowlerRepository.GetBowlersWithTeams().ToArray(); 
+            var BowlerData = _bowlerRepository.GetBowlersWithTeams(); 
             return BowlerData;
         }
 
     }
 }
+
+
+
+

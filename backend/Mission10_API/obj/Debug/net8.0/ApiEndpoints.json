@@ -2,14 +2,14 @@
   {
     "ContainingType": "Mission10_API.Controllers.BowlingController",
     "Method": "Get",
-    "RelativePath": "api/Bowling",
+    "RelativePath": "Bowling",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Mission10_API.Data.Bowler, Mission10_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
